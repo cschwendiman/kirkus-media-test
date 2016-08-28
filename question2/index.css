@@ -1,0 +1,96 @@
+body {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 12px;
+}
+
+.chat {
+    position: absolute;
+    bottom: 0;
+    right: 200px;
+    width: 260px;
+    height: 211px;
+    box-shadow: 0 1px 4px #eeeeee;
+    border: 1px solid #dddddd;
+    border-radius: 3px 3px 0 0;
+}
+
+.chat .header {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 1px 1px 0 #999999;
+    border-radius: 3px 3px 0 0;
+    background-color: #4080ff;
+    color: white;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 3px 1px 0;
+    border-radius: 50%;
+    background-color: #42b72a;
+}
+
+.chat .header .close {
+    float: right;
+}
+
+#log {
+    height: 160px;
+    overflow-y: scroll;
+    padding: 0 0 0 31px;
+}
+
+.bot {
+    float: left;
+    background-color: #f1f0f0;
+    color: #4b4f56;
+}
+
+.user {
+    float: right;
+    background-color: #4080ff;
+    color: white;
+}
+
+.user, .bot {
+    margin: 5px;
+    clear: both;
+    border-radius: 12px;
+    padding: 5px 10px;
+    max-width: 196px;
+    min-height: 16px;
+    position: relative;
+}
+
+.user + .user, .bot + .bot {
+    margin-top: -3px;
+}
+
+.user + .bot:before, .bot:first-child:before {
+    content: 'A';
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    position: absolute;
+    left: -31px;
+    top: 0;
+    background-color: darkorange;
+    border-radius: 50%;
+}
+
+#message {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #dddddd;
+    padding: 6px 8px;
+    height: 26px;
+}
