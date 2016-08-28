@@ -16,15 +16,18 @@ var AstrologyBot = {
     sign: null,
     init: function() {
         this.addMessage('bot', 'Welcome! I\'m the Astrology Bot. What\'s your birthday?');
+        // TODO perhaps use self instead of binding
         var boundHandleInput = this.handleInput.bind(this);
         this.getInput().addEventListener('keyup', function(event) {
             if (event.keyCode == 13) {
                 boundHandleInput();
             }
         });
+        // TODO make close button do something
     },
 
     addMessage: function(className, text) {
+        // TODO Add animation for bot 'typing'
         var message = document.createElement('span');
         message.className = className;
         if (className == 'bot') {
@@ -45,6 +48,7 @@ var AstrologyBot = {
 
         this.addMessage('user', input);
         input = this.sanitizeInput(input);
+        // TODO Remove start over in favor of restart state at end
         if (input == 'start over') {
             this.state = 0;
             this.addMessage('bot', 'Welcome! I\'m the Astrology Bot. What\'s your birthday?');
@@ -59,13 +63,14 @@ var AstrologyBot = {
                         this.state++;
                     }
                     else {
-                        this.addMessage('bot', 'Sorry, I didn\'t recognize that. Please use the format MM/DD/YYY');
+                        this.addMessage('bot', 'Sorry, I didn\'t recognize that. Please use the format MM/DD.');
                     }
                     return;
                 case 1:
                     // handle yes or no
                     if (this.validateYesNo(input)) {
                         if (input == 'yes') {
+                            // TODO Make this more readable - perhaps shorter horoscopes?
                             var lines = this.getHoroscope().split('\n');
                             for (var i = 0; i < lines.length; i++) {
                                 this.addMessage('bot', lines[i]);
@@ -75,7 +80,7 @@ var AstrologyBot = {
                         this.state++;
                     }
                     else {
-                        this.addMessage('bot', 'Sorry, I didn\'t recognize that. Please say \'yes\' or \'no\'');
+                        this.addMessage('bot', 'Sorry, I didn\'t recognize that. Please say \'yes\' or \'no\'.');
                     }
                     return;
                 case 2:
@@ -89,6 +94,7 @@ var AstrologyBot = {
     },
 
     sanitizeInput: function(input) {
+        // TODO
         return input;
     },
 
@@ -146,6 +152,7 @@ var AstrologyBot = {
     },
 
     getHoroscope: function() {
+        // TODO Perhaps scrape some daily horoscopes instead
         return Horoscopes[this.sign.toLowerCase()];
     },
 
@@ -163,5 +170,6 @@ var AstrologyBot = {
 };
 
 document.addEventListener("DOMContentLoaded", function(event) {
+    // TODO Make everything responsive and mobile friendly
     AstrologyBot.init();
 });
