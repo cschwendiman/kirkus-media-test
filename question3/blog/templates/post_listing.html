@@ -1,0 +1,10 @@
+<div class="post-listing">
+    <h3><a href="/post/{{ post.id }}">{{ post.title }}</a></h3>
+    <h4>Posted {{ post.created_at|date:"F jS, Y" }} by <a href="/author/{{ post.author.id }}">{{ post.author.first_name }} {{ post.author.last_name}}</a></h4>
+    <p>
+        {{ post.body|truncatewords_html:30 }}
+        {% if post.body|wordcount  > 30 %}
+            <a href="/post/{{ post.id }}">Read More</a>
+        {% endif %}
+    </p>
+</div>

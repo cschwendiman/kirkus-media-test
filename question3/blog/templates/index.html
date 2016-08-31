@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% if recent_posts %}
+        {% for post in recent_posts %}
+            {% include "post_listing.html" %}
+        {% endfor %}
+    {% else %}
+        <p>No recent posts.</p>
+    {% endif %}
+{% endblock %}

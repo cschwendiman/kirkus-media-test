@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+    <h2>Posts by {{ author.first_name }} {{ author.last_name }}</h2>
+    {% if author.post_set.all %}
+        {% for post in author.post_set.all %}
+            {% include "post_listing.html" %}
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

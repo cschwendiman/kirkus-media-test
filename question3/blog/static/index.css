@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    font-family: helvetica, arial, sans-serif;
+}
+
+.nav {
+    overflow: auto;
+    background: black;
+    color: white;
+    padding: 10px;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.nav li {
+    float: left;
+    margin-right: 10px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: crimson;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.container a {
+    color: crimson;
+}
+
+.container a:hover {
+    color: white;
+}
+
+.post-listing + .post-listing {
+    border-top: 1px dashed black;
+}

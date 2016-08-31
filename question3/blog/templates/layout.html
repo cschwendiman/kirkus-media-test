@@ -1,0 +1,19 @@
+<html>
+    <head>
+        {% load static from staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static "index.css" %}">
+    </head>
+
+    <body>
+        <div class="nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/authors">Authors</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <h1>Simplest Blog</h1>
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

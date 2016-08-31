@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% if authors %}
+        <ul>
+        {% for author in authors %}
+            <li><a href="/author/{{ author.id }}/">{{ author.first_name }} {{ author.last_name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No authors found.</p>
+    {% endif %}
+{% endblock %}
